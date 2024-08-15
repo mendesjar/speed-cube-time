@@ -16,14 +16,13 @@ function App() {
       if (iniciado) {
         clearInterval(intervalRef.current);
         intervalRef.current = undefined;
-        const temp = [
-          ...listTimes,
+        setListTimes((prevState) => [
+          ...prevState,
           {
             id: faker.string.uuid(),
             time: tempoDecorrido,
           },
-        ];
-        setListTimes(temp);
+        ]);
         setTempoDecorrido(0);
       } else if (time) {
         time.style.color = "red";

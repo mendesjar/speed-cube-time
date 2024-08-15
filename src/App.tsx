@@ -83,7 +83,10 @@ function App() {
               <div className="text-slate-900 flex-auto prose dark:prose-invert [html_:where(&amp;>*)]:mx-auto [html_:where(&amp;>*)]:max-w-2xl [html_:where(&amp;>*)]:lg:mx-[calc(50%-min(50%,theme(maxWidth.lg)))] [html_:where(&amp;>*)]:lg:max-w-3xl">
                 <div className="w-full">
                   <p className="tracking-widest">{patternShuffle}</p>
-                  <h1 id="time" className="font-extrabold text-7xl md:text-8xl">
+                  <h1
+                    id="time"
+                    className="font-extrabold text-7xl sm:text-8xl lg:text-9xl xl:text-[9rem] 2xl:text-[11rem]"
+                  >
                     {moment.utc(tempoDecorrido).format("mm:ss,S")}
                   </h1>
                 </div>

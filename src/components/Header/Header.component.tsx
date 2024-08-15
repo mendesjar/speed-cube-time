@@ -1,22 +1,13 @@
 import moment from "moment";
 import LogoMarca from "../../assets/logo-marca.svg";
 import { ITimes } from "../../interfaces/times.interface";
-import { useEffect, useState } from "react";
 
 interface IHeader {
   listSpeedTimes: ITimes[];
+  bestTime: number;
 }
 
-export function Header({ listSpeedTimes }: IHeader) {
-  const [bestTime, setBestTime] = useState<number>(0);
-
-  useEffect(() => {
-    if (listSpeedTimes.length) {
-      const listTimes = listSpeedTimes.map((speedTime) => speedTime.time);
-      setBestTime(Math.min(...listTimes));
-    }
-  }, [listSpeedTimes]);
-
+export function Header({ listSpeedTimes, bestTime }: IHeader) {
   return (
     <header className="contents lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex">
       <div className="contents lg:pointer-events-auto lg:block lg:w-72 lg:overflow-y-auto lg:border-r lg:border-zinc-900/10 lg:px-6 lg:pb-8 lg:pt-4 xl:w-80 lg:dark:border-white/10">

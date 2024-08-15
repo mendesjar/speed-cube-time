@@ -7,7 +7,7 @@ import { faker } from "@faker-js/faker";
 function App() {
   const [tempoDecorrido, setTempoDecorrido] = useState(0);
   const [iniciado, setIniciado] = useState(false);
-  const [listTimes, setListTimes] = useState<ITimes[]>([]);
+  const [listSpeedTimes, setListSpeedTimes] = useState<ITimes[]>([]);
   const intervalRef = useRef<number | undefined>(undefined);
 
   document.body.onkeydown = function (e) {
@@ -16,7 +16,7 @@ function App() {
       if (iniciado) {
         clearInterval(intervalRef.current);
         intervalRef.current = undefined;
-        setListTimes((prevState) => [
+        setListSpeedTimes((prevState) => [
           ...prevState,
           {
             id: faker.string.uuid(),
@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="w-full">
       <div className="h-full lg:ml-72 xl:ml-80">
-        <Header />
+        <Header listSpeedTimes={listSpeedTimes} />
         <div className="relative flex h-full flex-col px-4 pt-14 sm:px-6 lg:px-8">
           <main className="flex-auto">
             <article className="flex h-full flex-col pb-10 pt-16">

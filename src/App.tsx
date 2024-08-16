@@ -4,6 +4,7 @@ import moment from "moment";
 import { ITimes } from "./interfaces/times.interface";
 import { faker } from "@faker-js/faker";
 import { shuffleCube } from "./helpers";
+import { detectMob } from "./utils";
 
 function App() {
   const [tempoDecorrido, setTempoDecorrido] = useState(0);
@@ -11,47 +12,71 @@ function App() {
   const [patternShuffle, setPatternShuffle] = useState<string>("");
   const [iniciado, setIniciado] = useState(false);
   const [isRecord, setIsRecord] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [listSpeedTimes, setListSpeedTimes] = useState<ITimes[]>([]);
   const intervalRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const shuffle = shuffleCube();
     setPatternShuffle(shuffle);
+    setIsMobile(detectMob());
   }, []);
 
   document.body.onkeydown = function (e) {
-    if (e.key == " " || e.code == "Space" || e.code == "32") {
-      const time = document.getElementById("time");
-      if (iniciado) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = undefined;
-        const listSpeedTimesTemp = [
-          ...listSpeedTimes,
-          {
-            id: faker.string.uuid(),
-            time: tempoDecorrido,
-          },
-        ];
-        setListSpeedTimes(listSpeedTimesTemp);
-        const isRecord =
-          tempoDecorrido - (listSpeedTimes.findLast((e) => e)?.time || 0) < 0;
-        setIsRecord(isRecord);
-        setTempoDecorrido(0);
-        setPatternShuffle(shuffleCube());
-      } else if (time) {
-        time.style.color = "red";
-      }
+    if ((e.key == " " || e.code == "Space" || e.code == "32") && !isMobile) {
+      startTimerCount();
     }
   };
 
   document.body.onkeyup = function (e) {
-    if (e.key == " " || e.code == "Space" || e.code == "32") {
-      const time = document.getElementById("time");
-      if (time) time.style.color = "green";
-      if (!iniciado) return iniciarCronometro();
-      if (time) time.style.color = "";
-      setIniciado(false);
+    if ((e.key == " " || e.code == "Space" || e.code == "32") && !isMobile) {
+      endTimerCount();
     }
+  };
+
+  document.body.ontouchend = function () {
+    if (isMobile) {
+      endTimerCount();
+    }
+  };
+
+  document.body.ontouchstart = function () {
+    if (isMobile) {
+      startTimerCount();
+    }
+  };
+
+  const startTimerCount = () => {
+    const time = document.getElementById("time");
+    if (iniciado) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = undefined;
+      const listSpeedTimesTemp = [
+        ...listSpeedTimes,
+        {
+          id: faker.string.uuid(),
+          time: tempoDecorrido,
+        },
+      ];
+      setListSpeedTimes(listSpeedTimesTemp);
+      const isRecord =
+        tempoDecorrido - (listSpeedTimes.findLast((e) => e)?.time || 0) < 0;
+      setIsRecord(isRecord);
+      setTempoDecorrido(0);
+      setPatternShuffle(shuffleCube());
+    } else if (time) {
+      time.style.color = "red";
+    }
+  };
+
+  const endTimerCount = () => {
+    const time = document.getElementById("time");
+    if (time) {
+      time.style.color = "green";
+      if (!iniciado) return iniciarCronometro();
+      time.style.color = "";
+    }
+    setIniciado(false);
   };
 
   const iniciarCronometro = () => {

@@ -11,14 +11,14 @@ export function Header({ listSpeedTimes, bestTime }: IHeader) {
   return (
     <header className="contents lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex">
       <div className="contents lg:pointer-events-auto lg:block lg:w-72 lg:overflow-y-auto lg:border-r lg:border-zinc-900/10 lg:px-6 lg:pb-8 lg:pt-4 xl:w-80 lg:dark:border-white/10">
-        <div className="hidden lg:flex">
+        <div className="select-none hidden lg:flex">
           <a aria-label="Home" href="/">
             <img src={LogoMarca} alt="Logo Marca" />
           </a>
         </div>
         <div className="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-12 px-4 transition sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 backdrop-blur-sm dark:backdrop-blur bg-white/[var(--bg-opacity-light)] dark:bg-zinc-900/[var(--bg-opacity-dark)]">
           <div className="absolute inset-x-0 top-full h-px transition bg-zinc-900/7.5 dark:bg-white/7.5"></div>
-          <div className="flex items-center gap-5 lg:hidden">
+          <div className="select-none flex items-center gap-5 lg:hidden">
             <button
               type="button"
               className="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5"

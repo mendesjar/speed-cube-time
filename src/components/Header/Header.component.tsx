@@ -68,7 +68,7 @@ export function Header({ listSpeedTimes, bestTime }: IHeader) {
             </li>
             <ul role="list" className="sticky bottom-0 z-10 mt-6">
               <li className="relative py-1">
-                <div className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-emerald-500 dark:text-white dark:hover:bg-emerald-400 w-full">
+                <div className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-slate-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-emerald-500 dark:text-white dark:hover:bg-emerald-400 w-full">
                   Average Time:{" "}
                   {moment
                     .utc(
@@ -79,7 +79,7 @@ export function Header({ listSpeedTimes, bestTime }: IHeader) {
                 </div>
               </li>
               <li className="relative py-1">
-                <div className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-emerald-500 dark:text-white dark:hover:bg-emerald-400 w-full">
+                <div className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-slate-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-emerald-500 dark:text-white dark:hover:bg-emerald-400 w-full">
                   Best Time: {moment.utc(bestTime).format("mm:ss,S")}
                 </div>
               </li>

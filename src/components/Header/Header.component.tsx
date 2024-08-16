@@ -57,7 +57,7 @@ export function Header({ listSpeedTimes, bestTime }: IHeader) {
                       <li className="relative" key={speedTime.id}>
                         <div className="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
                           <span className="truncate">
-                            {moment.utc(speedTime.time).format("mm:ss,S")}
+                            {moment.utc(speedTime.time).format("mm:ss,SS")}
                           </span>
                         </div>
                       </li>
@@ -75,12 +75,12 @@ export function Header({ listSpeedTimes, bestTime }: IHeader) {
                       listSpeedTimes.reduce((acc, val) => acc + val.time, 0) /
                         listSpeedTimes?.length || 0
                     )
-                    .format("mm:ss,S")}
+                    .format("mm:ss,SS")}
                 </div>
               </li>
               <li className="relative py-1">
                 <div className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-slate-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-emerald-500 dark:text-white dark:hover:bg-emerald-400 w-full">
-                  Best Time: {moment.utc(bestTime).format("mm:ss,S")}
+                  Best Time: {moment.utc(bestTime).format("mm:ss,SS")}
                 </div>
               </li>
             </ul>

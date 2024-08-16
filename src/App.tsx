@@ -87,7 +87,7 @@ function App() {
                     id="time"
                     className="font-extrabold text-7xl sm:text-8xl lg:text-9xl xl:text-[9rem] 2xl:text-[11rem]"
                   >
-                    {moment.utc(tempoDecorrido).format("mm:ss,S")}
+                    {moment.utc(tempoDecorrido).format("mm:ss,SS")}
                   </h1>
                 </div>
               </div>
@@ -100,7 +100,7 @@ function App() {
                         (listSpeedTimes[listSpeedTimes.length - 1]?.time || 0) -
                           bestTime
                       )
-                      .format("mm:ss,S")}
+                      .format("mm:ss,SS")}
                   </div>
                   {isRecord && (
                     <div className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full py-1 px-3 bg-green-500 text-white ring-1 ring-inset ring-zinc-900/10 hover:bg-green-600 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white">

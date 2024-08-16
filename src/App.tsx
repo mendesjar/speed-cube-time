@@ -107,10 +107,12 @@ function App() {
             <article className="flex h-full flex-col pb-10 pt-16">
               <div className="text-slate-900 flex-auto prose dark:prose-invert [html_:where(&amp;>*)]:mx-auto [html_:where(&amp;>*)]:max-w-2xl [html_:where(&amp;>*)]:lg:mx-[calc(50%-min(50%,theme(maxWidth.lg)))] [html_:where(&amp;>*)]:lg:max-w-3xl">
                 <div className="w-full">
-                  <p className="tracking-widest">{patternShuffle}</p>
+                  <p className="select-none tracking-widest">
+                    {patternShuffle}
+                  </p>
                   <h1
                     id="time"
-                    className="font-extrabold text-7xl sm:text-8xl lg:text-9xl xl:text-[9rem] 2xl:text-[11rem]"
+                    className="select-none font-extrabold text-7xl sm:text-8xl lg:text-9xl xl:text-[9rem] 2xl:text-[11rem]"
                   >
                     {moment.utc(tempoDecorrido).format("mm:ss,SS")}
                   </h1>
@@ -118,7 +120,7 @@ function App() {
               </div>
               <footer>
                 <div className="not-prose mb-16 mt-6 flex gap-3">
-                  <div className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full py-1 px-3 text-slate-900 ring-1 ring-inset ring-zinc-900/10 hover:bg-zinc-900/2.5 hover:text-zinc-900 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white">
+                  <div className="select-none inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full py-1 px-3 text-slate-900 ring-1 ring-inset ring-zinc-900/10 hover:bg-zinc-900/2.5 hover:text-zinc-900 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white">
                     Difference Between Best Time:{" "}
                     {moment
                       .utc(
@@ -128,7 +130,7 @@ function App() {
                       .format("mm:ss,SS")}
                   </div>
                   {isRecord && (
-                    <div className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full py-1 px-3 bg-green-500 text-white ring-1 ring-inset ring-zinc-900/10 hover:bg-green-600 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white">
+                    <div className="select-none inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full py-1 px-3 bg-green-500 text-white ring-1 ring-inset ring-zinc-900/10 hover:bg-green-600 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white">
                       New Record
                     </div>
                   )}

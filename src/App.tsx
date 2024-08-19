@@ -11,10 +11,11 @@ function App() {
   const [bestTime, setBestTime] = useState<number>(0);
   const [patternShuffle, setPatternShuffle] = useState<string>("");
   const [iniciado, setIniciado] = useState(false);
-  const [isRecord, setIsRecord] = useState(true);
+  const [isRecord, setIsRecord] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [listSpeedTimes, setListSpeedTimes] = useState<ITimes[]>([]);
   const intervalRef = useRef<number | undefined>(undefined);
+  const areaTouch = document.getElementById("area-touch");
 
   useEffect(() => {
     const shuffle = shuffleCube();
@@ -34,17 +35,19 @@ function App() {
     }
   };
 
-  document.body.ontouchend = function () {
-    if (isMobile) {
-      endTimerCount();
-    }
-  };
+  if (areaTouch)
+    areaTouch.ontouchend = function () {
+      if (isMobile) {
+        endTimerCount();
+      }
+    };
 
-  document.body.ontouchstart = function () {
-    if (isMobile) {
-      startTimerCount();
-    }
-  };
+  if (areaTouch)
+    areaTouch.ontouchstart = function () {
+      if (isMobile) {
+        startTimerCount();
+      }
+    };
 
   const startTimerCount = () => {
     const time = document.getElementById("time");
@@ -102,7 +105,10 @@ function App() {
     <div className="w-full">
       <div className="h-full lg:ml-72 xl:ml-80">
         <Header listSpeedTimes={listSpeedTimes} bestTime={bestTime} />
-        <div className="relative flex h-full flex-col px-4 pt-14 sm:px-6 lg:px-8">
+        <div
+          id="area-touch"
+          className="relative flex h-full flex-col px-4 pt-14 sm:px-6 lg:px-8"
+        >
           <main className="flex-auto">
             <article className="flex h-full flex-col pb-10 pt-16">
               <div className="text-slate-900 flex-auto prose dark:prose-invert [html_:where(&amp;>*)]:mx-auto [html_:where(&amp;>*)]:max-w-2xl [html_:where(&amp;>*)]:lg:mx-[calc(50%-min(50%,theme(maxWidth.lg)))] [html_:where(&amp;>*)]:lg:max-w-3xl">
@@ -112,7 +118,7 @@ function App() {
                   </p>
                   <h1
                     id="time"
-                    className="select-none font-extrabold text-7xl sm:text-8xl lg:text-9xl xl:text-[9rem] 2xl:text-[11rem]"
+                    className="select-none font-extrabold text-4xl xs:text-6xl sm:text-9xl lg:text-9xl xl:text-[9rem] 2xl:text-[11rem]"
                   >
                     {moment.utc(tempoDecorrido).format("mm:ss,SS")}
                   </h1>

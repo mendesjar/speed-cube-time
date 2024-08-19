@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Header } from "./components";
+import { Header, Kbd } from "./components";
 import moment from "moment";
 import { ITimes } from "./interfaces/times.interface";
 import { faker } from "@faker-js/faker";
@@ -116,12 +116,15 @@ function App() {
                   <p className="select-none tracking-widest">
                     {patternShuffle}
                   </p>
-                  <h1
-                    id="time"
-                    className="select-none font-extrabold text-4xl xs:text-6xl sm:text-9xl lg:text-9xl xl:text-[9rem] 2xl:text-[11rem]"
-                  >
-                    {moment.utc(tempoDecorrido).format("mm:ss,SS")}
-                  </h1>
+                  <div className="flex items-end">
+                    <h1
+                      id="time"
+                      className="select-none font-extrabold text-4xl xs:text-6xl sm:text-9xl lg:text-9xl xl:text-[9rem] 2xl:text-[11rem]"
+                    >
+                      {moment.utc(tempoDecorrido).format("mm:ss,SS")}
+                    </h1>
+                    {!isMobile && !iniciado ? <Kbd label="Spacebar" /> : null}
+                  </div>
                 </div>
               </div>
               <footer>

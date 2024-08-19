@@ -10,6 +10,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "312px",
+      },
       fontFamily: {
         body: '"K2D", sans-serif;',
       },

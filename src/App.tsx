@@ -128,7 +128,7 @@ function App() {
                 </div>
               </div>
               <footer>
-                <div className="not-prose mb-16 mt-6 flex flex-wrap gap-3">
+                <div className="not-prose mb-16 mt-6 flex flex-wrap gap-3 items-start">
                   <div className="select-none inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full py-1 px-3 text-slate-900 ring-1 ring-inset ring-zinc-900/10 hover:bg-zinc-900/2.5 hover:text-zinc-900 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white">
                     Difference Between Best Time:{" "}
                     {moment
@@ -139,8 +139,17 @@ function App() {
                       .format("mm:ss,SS")}
                   </div>
                   {isRecord && (
-                    <div className="select-none inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full py-1 px-3 bg-green-500 text-white ring-1 ring-inset ring-zinc-900/10 hover:bg-green-600 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white">
-                      New Record
+                    <div className="flex items-start">
+                      <div className="select-none inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full py-1 px-3 bg-green-500 text-white ring-1 ring-inset ring-zinc-900/10 hover:bg-green-600 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white">
+                        New Record
+                      </div>
+                      <div className="select-none">
+                        <iframe
+                          src="https://giphy.com/embed/ehz3LfVj7NvpY8jYUY"
+                          className="max-w-10 h-8"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
                     </div>
                   )}
                 </div>

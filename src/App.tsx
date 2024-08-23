@@ -62,8 +62,7 @@ function App() {
         },
       ];
       setListSpeedTimes(listSpeedTimesTemp);
-      const isRecord =
-        tempoDecorrido - (listSpeedTimes.findLast((e) => e)?.time || 0) < 0;
+      const isRecord = tempoDecorrido - bestTime < 0;
       setIsRecord(isRecord);
       setTempoDecorrido(0);
       setPatternShuffle(shuffleCube());
@@ -128,7 +127,7 @@ function App() {
                 </div>
               </div>
               <footer>
-                <div className="not-prose mb-16 mt-6 flex flex-wrap gap-3 items-start transition-transform hover:skew-y-1">
+                <div className="group not-prose mb-16 mt-6 flex flex-wrap gap-3 items-start transition-transform hover:skew-y-1">
                   <div className="select-none inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full py-1 px-3 text-slate-900 ring-1 ring-inset ring-zinc-900/10 hover:bg-zinc-900/2.5 hover:text-zinc-900 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white">
                     Difference Between Best Time:{" "}
                     {moment
@@ -146,7 +145,7 @@ function App() {
                       <div className="select-none touch-none pointer-events-none">
                         <iframe
                           src="https://giphy.com/embed/ehz3LfVj7NvpY8jYUY"
-                          className="max-w-10 h-8"
+                          className="max-w-10 h-8 ml-3 transition-transform group-hover:ml-4 group-hover:scale-150"
                           allowFullScreen
                         ></iframe>
                       </div>

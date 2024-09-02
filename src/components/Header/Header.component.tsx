@@ -1,19 +1,30 @@
 import moment from "moment";
 import LogoMarca from "../../assets/logo-marca.svg";
 import { ITimes } from "../../interfaces/times.interface";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { Drawer } from "../";
+import { Trash } from "lucide-react";
 
 interface IHeader {
   listSpeedTimes: ITimes[];
+  setListSpeedTimes: Dispatch<SetStateAction<ITimes[]>>;
   bestTime: number;
 }
 
-export function Header({ listSpeedTimes, bestTime }: IHeader) {
+export function Header({
+  listSpeedTimes,
+  setListSpeedTimes,
+  bestTime,
+}: IHeader) {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
 
   function handleOpenDrawer() {
     setOpenDrawer(true);
+  }
+
+  function handleRemoveTime(id: string) {
+    const list = listSpeedTimes.filter((speedTime) => speedTime.id != id);
+    setListSpeedTimes(list);
   }
 
   return (
@@ -23,6 +34,7 @@ export function Header({ listSpeedTimes, bestTime }: IHeader) {
         setOpen={setOpenDrawer}
         listSpeedTimes={listSpeedTimes}
         bestTime={bestTime}
+        handleRemoveTime={handleRemoveTime}
       />
       <header className="contents lg:pointer-events-none lg:fixed lg:inset-0 lg:z-10 lg:flex">
         <div className="contents lg:pointer-events-auto lg:block lg:w-72 lg:overflow-y-auto lg:border-r lg:border-zinc-900/10 lg:px-6 lg:pb-8 lg:pt-4 xl:w-80 lg:dark:border-white/10">
@@ -75,6 +87,12 @@ export function Header({ listSpeedTimes, bestTime }: IHeader) {
                             <span className="select-none truncate">
                               {moment.utc(speedTime.time).format("mm:ss,SS")}
                             </span>
+                            <button
+                              className="bg-zinc-200 p-1 hover:bg-zinc-300 rounded-full transition-colors"
+                              onClick={() => handleRemoveTime(speedTime.id)}
+                            >
+                              <Trash className="stroke-zinc-900 size-4 stroke-[2.5px]" />
+                            </button>
                           </div>
                         </li>
                       </>

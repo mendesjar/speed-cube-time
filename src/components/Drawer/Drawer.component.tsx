@@ -4,6 +4,7 @@ import {
   DialogPanel,
   //TransitionChild,
 } from "@headlessui/react";
+import { Trash, X } from "lucide-react";
 import moment from "moment";
 import { ITimes } from "../../interfaces/times.interface";
 
@@ -12,11 +13,13 @@ export function Drawer({
   setOpen,
   listSpeedTimes,
   bestTime,
+  handleRemoveTime,
 }: {
   open: boolean;
   setOpen: (value: boolean) => void;
   listSpeedTimes: ITimes[];
   bestTime: number;
+  handleRemoveTime: (id: string) => void;
 }) {
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-50">
@@ -40,9 +43,7 @@ export function Drawer({
                     aria-label="Toggle navigation"
                     onClick={() => setOpen(false)}
                   >
-                    <h1 className="text-base font-semibold leading-6 text-gray-900">
-                      X
-                    </h1>
+                    <X className="text-gray-900" />
                   </button>
                 </div>
                 <div className="relative mt-6 flex-1 px-4 sm:px-6">
@@ -71,6 +72,14 @@ export function Drawer({
                                         .utc(speedTime.time)
                                         .format("mm:ss,SS")}
                                     </span>
+                                    <button
+                                      className="bg-zinc-200 p-1 hover:bg-zinc-300 rounded-full transition-colors"
+                                      onClick={() =>
+                                        handleRemoveTime(speedTime.id)
+                                      }
+                                    >
+                                      <Trash className="stroke-zinc-900 size-4 stroke-[2.5px]" />
+                                    </button>
                                   </div>
                                 </li>
                               </>

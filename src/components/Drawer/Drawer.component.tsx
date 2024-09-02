@@ -4,9 +4,10 @@ import {
   DialogPanel,
   //TransitionChild,
 } from "@headlessui/react";
-import { Trash, X } from "lucide-react";
+import { X } from "lucide-react";
 import moment from "moment";
 import { ITimes } from "../../interfaces/times.interface";
+import { SwipeDelete } from "../";
 
 export function Drawer({
   open,
@@ -65,23 +66,21 @@ export function Drawer({
                                 ) : (
                                   <div className="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"></div>
                                 )}
-                                <li className="relative" key={speedTime.id}>
-                                  <div className="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
+                                <SwipeDelete
+                                  onDelete={() =>
+                                    handleRemoveTime(speedTime.id)
+                                  }
+                                  key={speedTime.id}
+                                  height={"auto"}
+                                >
+                                  <div className="bg-white flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
                                     <span className="select-none truncate">
                                       {moment
                                         .utc(speedTime.time)
                                         .format("mm:ss,SS")}
                                     </span>
-                                    <button
-                                      className="bg-zinc-200 p-1 hover:bg-zinc-300 rounded-full transition-colors"
-                                      onClick={() =>
-                                        handleRemoveTime(speedTime.id)
-                                      }
-                                    >
-                                      <Trash className="stroke-zinc-900 size-4 stroke-[2.5px]" />
-                                    </button>
                                   </div>
-                                </li>
+                                </SwipeDelete>
                               </>
                             ))}
                           </ul>

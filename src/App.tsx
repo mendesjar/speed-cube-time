@@ -107,6 +107,7 @@ function App() {
           listSpeedTimes={listSpeedTimes}
           setListSpeedTimes={setListSpeedTimes}
           bestTime={bestTime}
+          isMobile={isMobile}
         />
         <div
           id="area-touch"

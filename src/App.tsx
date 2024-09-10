@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { Header, Kbd } from "./components";
+import { DialogShuffle, Header, Kbd } from "./components";
 import moment from "moment";
 import { ITimes } from "./interfaces/times.interface";
 import { faker } from "@faker-js/faker";
 import { shuffleCube } from "./helpers";
 import { detectMob } from "./utils";
+import { Box } from "lucide-react";
+import { Button } from "@headlessui/react";
 
 function App() {
   const [tempoDecorrido, setTempoDecorrido] = useState(0);
@@ -13,6 +15,7 @@ function App() {
   const [iniciado, setIniciado] = useState(false);
   const [isRecord, setIsRecord] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [openDialogSurffle, setOpenDialogSurffle] = useState<boolean>(false);
   const [listSpeedTimes, setListSpeedTimes] = useState<ITimes[]>([]);
   const intervalRef = useRef<number | undefined>(undefined);
   const areaTouch = document.getElementById("area-touch");
@@ -103,6 +106,11 @@ function App() {
   return (
     <div className="w-full">
       <div className="h-full lg:ml-72 xl:ml-80">
+        <DialogShuffle
+          open={openDialogSurffle}
+          setOpen={setOpenDialogSurffle}
+          pattern={patternShuffle}
+        />
         <Header
           listSpeedTimes={listSpeedTimes}
           setListSpeedTimes={setListSpeedTimes}
@@ -117,9 +125,18 @@ function App() {
             <article className="flex h-full flex-col pb-10 pt-16">
               <div className="text-slate-900 flex-auto prose dark:prose-invert [html_:where(&amp;>*)]:mx-auto [html_:where(&amp;>*)]:max-w-2xl [html_:where(&amp;>*)]:lg:mx-[calc(50%-min(50%,theme(maxWidth.lg)))] [html_:where(&amp;>*)]:lg:max-w-3xl">
                 <div className="w-full">
-                  <p className="select-none tracking-widest">
-                    {patternShuffle}
-                  </p>
+                  <div className="w-full">
+                    <Button
+                      type="button"
+                      className="flex items-center justify-center rounded-full p-5 mb-3 transition-colors bg-zinc-900/5 hover:bg-zinc-900/10 dark:hover:bg-white/5"
+                      onClick={() => setOpenDialogSurffle(true)}
+                    >
+                      <Box className="text-gray-900 size-5" />
+                    </Button>
+                    <p className="select-none tracking-widest">
+                      {patternShuffle}
+                    </p>
+                  </div>
                   <div className="flex items-end">
                     <h1
                       id="time"

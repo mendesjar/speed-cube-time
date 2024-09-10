@@ -198,7 +198,7 @@ export function DialogShuffle({
                     className="cube -ml-6 -mt-6 text-3xl md:text-4xl"
                     id="cube"
                   >
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -206,7 +206,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -214,7 +214,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -222,7 +222,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -230,7 +230,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -238,7 +238,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -246,7 +246,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -254,7 +254,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -262,7 +262,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -270,7 +270,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -278,7 +278,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -286,7 +286,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -294,7 +294,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -302,7 +302,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -310,7 +310,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -318,7 +318,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -326,7 +326,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -334,7 +334,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -342,7 +342,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -350,7 +350,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -358,7 +358,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -366,7 +366,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -374,7 +374,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -382,7 +382,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -390,7 +390,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>
@@ -398,7 +398,7 @@ export function DialogShuffle({
                       <div className="element w-full h-full bg-black rounded-xl back"></div>
                       <div className="element w-full h-full bg-black rounded-xl front"></div>
                     </div>
-                    <div className="piece w-[4.75rem] h-[4.75rem]">
+                    <div className="piece w-[3.8rem] h-[3.8rem] sm:w-[4.75rem] sm:h-[4.75rem]">
                       <div className="element w-full h-full bg-black rounded-xl left"></div>
                       <div className="element w-full h-full bg-black rounded-xl right"></div>
                       <div className="element w-full h-full bg-black rounded-xl top"></div>

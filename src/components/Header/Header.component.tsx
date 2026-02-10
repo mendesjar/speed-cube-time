@@ -2,12 +2,14 @@ import LogoMarca from "../../assets/logo-marca.svg";
 import { ITimes } from "../../interfaces/times.interface";
 import { Dispatch, SetStateAction, useState } from "react";
 import { Drawer, Navegation } from "../";
+import { HistoryTimesService } from "../../services";
 
 interface IHeader {
   listSpeedTimes: ITimes[];
   setListSpeedTimes: Dispatch<SetStateAction<ITimes[]>>;
   bestTime: number;
   isMobile: boolean;
+  historyTimesService: HistoryTimesService;
 }
 
 export function Header({
@@ -15,6 +17,7 @@ export function Header({
   setListSpeedTimes,
   bestTime,
   isMobile,
+  historyTimesService,
 }: IHeader) {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
 
@@ -23,7 +26,7 @@ export function Header({
   }
 
   function handleRemoveTime(id: string) {
-    const list = listSpeedTimes.filter((speedTime) => speedTime.id != id);
+    const list = historyTimesService.removeTime(id);
     setListSpeedTimes(list);
   }
 

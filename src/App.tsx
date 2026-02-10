@@ -7,6 +7,7 @@ import { shuffleCube } from "./helpers";
 import { detectMob } from "./utils";
 import { Box } from "lucide-react";
 import { Button } from "@headlessui/react";
+import { HistoryTimesService } from "./services";
 
 function App() {
   const [tempoDecorrido, setTempoDecorrido] = useState(0);
@@ -19,6 +20,8 @@ function App() {
   const [listSpeedTimes, setListSpeedTimes] = useState<ITimes[]>([]);
   const intervalRef = useRef<number | undefined>(undefined);
   const areaTouch = document.getElementById("area-touch");
+
+  const historyTimesService = new HistoryTimesService();
 
   useEffect(() => {
     const shuffle = shuffleCube();
@@ -57,14 +60,12 @@ function App() {
     if (iniciado) {
       clearInterval(intervalRef.current);
       intervalRef.current = undefined;
-      const listSpeedTimesTemp = [
-        ...listSpeedTimes,
-        {
-          id: faker.string.uuid(),
-          time: tempoDecorrido,
-        },
-      ];
-      setListSpeedTimes(listSpeedTimesTemp);
+      const newTime = {
+        id: faker.string.uuid(),
+        time: tempoDecorrido,
+      };
+      const newListTemp = historyTimesService.setTime(newTime);
+      setListSpeedTimes(newListTemp);
       const isRecord = tempoDecorrido - bestTime < 0;
       setIsRecord(isRecord);
       setTempoDecorrido(0);
@@ -97,6 +98,13 @@ function App() {
   };
 
   useEffect(() => {
+    const times = historyTimesService.getTimes();
+    if (times.length) {
+      setListSpeedTimes(times);
+    }
+  }, []);
+
+  useEffect(() => {
     if (listSpeedTimes.length) {
       const listTimes = listSpeedTimes.map((speedTime) => speedTime.time);
       setBestTime(Math.min(...listTimes));
@@ -116,6 +124,7 @@ function App() {
           setListSpeedTimes={setListSpeedTimes}
           bestTime={bestTime}
           isMobile={isMobile}
+          historyTimesService={historyTimesService}
         />
         <div
           id="area-touch"
@@ -146,7 +155,7 @@ function App() {
                     {moment
                       .utc(
                         (listSpeedTimes[listSpeedTimes.length - 1]?.time || 0) -
-                          bestTime
+                          bestTime,
                       )
                       .format("mm:ss,SS")}
                   </div>

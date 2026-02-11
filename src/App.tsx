@@ -5,8 +5,8 @@ import { ITimes } from "./interfaces/times.interface";
 import { faker } from "@faker-js/faker";
 import { shuffleCube } from "./helpers";
 import { detectMob } from "./utils";
-import { Box } from "lucide-react";
-import { Button } from "@headlessui/react";
+// import { Box } from "lucide-react";
+// import { Button } from "@headlessui/react";
 import { HistoryTimesService } from "./services";
 
 function App() {
@@ -178,13 +178,13 @@ function App() {
             </article>
           </main>
         </div>
-        <Button
+        {/* <Button
           type="button"
           className="fixed bottom-5 right-5 flex items-center justify-center rounded-full p-5 mb-3 transition-colors bg-zinc-900/5 hover:bg-zinc-900/10 dark:hover:bg-white/5"
           onClick={() => setOpenDialogSurffle(true)}
         >
           <Box className="text-gray-900 size-5" />
-        </Button>
+        </Button> */}
       </div>
     </div>
   );

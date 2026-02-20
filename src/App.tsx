@@ -108,7 +108,7 @@ function App() {
     if (listSpeedTimes.length) {
       const listTimes = listSpeedTimes.map((speedTime) => speedTime.time);
       setBestTime(Math.min(...listTimes));
-    }
+    } else setBestTime(0);
   }, [listSpeedTimes]);
 
   return (

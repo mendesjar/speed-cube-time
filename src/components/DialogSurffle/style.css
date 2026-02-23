@@ -9,6 +9,7 @@
 .scene {
   perspective: 1200px;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .scene .anchor {
@@ -44,7 +45,8 @@
   height: 95%;
   border-radius: 10%;
   outline: 1px solid transparent;
-  box-shadow: inset 0.05em 0.05em 0.2rem 0 rgba(255, 255, 255, 0.25),
+  box-shadow:
+    inset 0.05em 0.05em 0.2rem 0 rgba(255, 255, 255, 0.25),
     inset -0.05em -0.05em 0.2rem 0 rgba(0, 0, 0, 0.25);
 }
 .cube > .piece > .element > .sticker.blue {
@@ -58,11 +60,22 @@
   background-color: #fff;
 }
 .cube > .piece > .element > .sticker.yellow {
-  background-color: #F3FF00;
+  background-color: #f3ff00;
 }
 .cube > .piece > .element > .sticker.orange {
   background-color: #ff5000;
 }
 .cube > .piece > .element > .sticker.red {
   background-color: #df0500;
+}
+.piece {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+}
+.element {
+  backface-visibility: hidden;
+}
+.cube {
+  transform-style: preserve-3d;
 }

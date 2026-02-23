@@ -12,6 +12,8 @@ export function DialogShuffle({
   setOpen: (value: boolean) => void;
   pattern: string;
 }) {
+  let moveTimers: (number | undefined)[] = [];
+
   var colors = ["blue", "green", "yellow", "white", "orange", "red"],
     faces: any = {
       F: 1,
@@ -30,6 +32,8 @@ export function DialogShuffle({
     pieces: any = null;
 
   function close() {
+    moveTimers.forEach((t) => clearTimeout(t));
+    moveTimers = [];
     setOpen(false);
   }
 
@@ -42,13 +46,13 @@ export function DialogShuffle({
       "piece" +
         ((1 << face) +
           (1 << mx(face, index)) +
-          (1 << mx(face, index + 1)) * corner)
+          (1 << mx(face, index + 1)) * corner),
     );
   }
 
   function mx(i: number, j: number) {
     return (
-      ([2, 4, 3, 5][j % 4 | 0] +
+      ([2, 4, 3, 5][(j % 4) | 0] +
         (i % 2) * (((j | 0) % 4) * 2 + 3) +
         2 * ((i / 2) | 0)) %
       6
@@ -69,7 +73,7 @@ export function DialogShuffle({
       qubes.forEach(function (piece) {
         piece.style.transform = piece.style.transform.replace(
           /rotate.\(\S+\)/,
-          style
+          style,
         );
       });
       if (passed >= 300) return swapPieces(face, 3 - 2 * cw);
@@ -89,8 +93,8 @@ export function DialogShuffle({
               .firstChild as HTMLElement;
           var className = sticker1 ? sticker1.className : "";
           if (sticker1 && sticker2 && className) {
-            (sticker1.className = sticker2.className),
-              (sticker2.className = className);
+            ((sticker1.className = sticker2.className),
+              (sticker2.className = className));
           }
         }
       }
@@ -116,6 +120,8 @@ export function DialogShuffle({
   }
 
   function rotey(pattern: string) {
+    moveTimers.forEach((t) => clearTimeout(t));
+    moveTimers = [];
     const arrayFormat = Array.from(pattern.replace(/\s+/g, "")).reduce(
       (acc: any, char) => {
         if (char === "'") {
@@ -127,14 +133,19 @@ export function DialogShuffle({
         }
         return acc;
       },
-      []
+      [],
     );
 
     arrayFormat.forEach((face: string, i: number) => {
-      setTimeout(() => {
-        const faceRotation: boolean = face.includes("'") ? false : true;
-        animateRotation(faces[face], faceRotation);
-      }, (i + 1) * 2000);
+      const timer = setTimeout(
+        () => {
+          const faceRotation: boolean = face.includes("'") ? false : true;
+          animateRotation(faces[face], faceRotation);
+        },
+        (i + 1) * 2000,
+      );
+
+      moveTimers.push(timer);
     });
   }
 
@@ -143,18 +154,23 @@ export function DialogShuffle({
   };
 
   useEffect(() => {
+    let timer: number | undefined;
     if (open) {
-      let timer;
-      clearTimeout(timer);
       timer = setTimeout(() => {
         pieces = document.getElementsByClassName("piece");
+
         if (pieces) {
           assembleCube();
           rotey(pattern);
         }
-      }, 1000);
+      }, 500);
     }
-  }, [open]);
+    return () => {
+      clearTimeout(timer);
+      moveTimers.forEach((t) => clearTimeout(t));
+      moveTimers = [];
+    };
+  }, [open, pattern]);
 
   return (
     <Dialog
